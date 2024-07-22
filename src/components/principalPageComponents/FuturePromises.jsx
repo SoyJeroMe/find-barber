@@ -3,7 +3,7 @@ import barberOne from '../../img/barbers/barber2.jpg';
 import barberTwo from '../../img/barbers/barber2.jpg';
 import barberThree from '../../img/barbers/barber3.jpg';
 
-function StylistsCardsMenu() {
+function FuturePromises() {
   const [stylists, setStylists] = useState([
     { name: 'John Smith', profession: 'Hair Stylist', image: barberOne },
     { name: 'Sarah Anderson', profession: 'Barber', image: barberTwo },
@@ -17,10 +17,10 @@ function StylistsCardsMenu() {
     const fetchStylists = async () => {
       // Simulate an API call
       const data = [
-        { name: 'Esteban Rojas', profession: 'Hair Stylist', image: barberOne },
-        { name: 'Lisa Martinez', profession: 'Barber', image: barberTwo },
-        { name: 'Johan Tabares', profession: 'Nail Technician', image: barberThree },
-        { name: 'Laure Orozco', profession: 'Nail Technician', image: barberThree },
+        { name: 'John Smith', profession: 'Hair Stylist', image: barberOne },
+        { name: 'Sarah Anderson', profession: 'Barber', image: barberTwo },
+        { name: 'Lisa Martinez', profession: 'Nail Technician', image: barberThree },
+        { name: 'Lisa Martinez', profession: 'Nail Technician', image: barberThree },
       ];
       setStylists(data);
     };
@@ -33,7 +33,7 @@ function StylistsCardsMenu() {
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="w-full mx-auto">
           <div className="flex items-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-800">Trabajadores destacados del mes</h2>
+            <h2 className="text-3xl font-bold text-gray-800">Nuevos Talentos</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {stylists.map((stylist, index) => (
@@ -81,4 +81,4 @@ function StylistsCardsMenu() {
   );
 }
 
-export default StylistsCardsMenu;
+export default FuturePromises;

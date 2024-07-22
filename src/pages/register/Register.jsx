@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../principals/Navbar';
+import Navbar from '../../components/principals/Navbar';
 import currentUser from '../../img/options/currentUser.png'
 import stylist from '../../img/options/stylist.png'
 

@@ -1,53 +1,102 @@
-import MenuHamburguer from '../icons/MenuHamburguer'
-import {Link} from 'react-router-dom'
-import logo from '../../img/logos/logo.png'
+import React, { useState } from 'react';
+import MenuHamburguer from '../icons/MenuHamburguer';
+import { Link } from 'react-router-dom';
+import logoSL from '../../img/logos/LSLetra.png';
 
 function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div>
-      <header className="py-4 px-6 flex items-center justify-between text-white">
+      <header className="py-1 px-6 flex items-center justify-between bg-white">
         <Link to={'/'} className='flex items-center'>
-        <article>
-          <img className="w-20 h-20" src={logo} alt="" />
-        </article>
-          <div className="text-2xl font-bold text-purple-800">
-            Stylist <span className="text-black">Finde</span>
-          </div>
+          <img className='h-28' src={logoSL} alt="Logo" />
         </Link>
 
-        <article className='text-purple-800 flex list-none font-bold space-x-4 mr-12'>
-  <li className='hover:scale-110 transform transition-transform duration-200'>Contactanos</li>
-  <li className='hover:scale-110 transform transition-transform duration-200'>Nosotros</li>
-  <li className='hover:scale-110 transform transition-transform duration-200'>Cursos</li>
-  <li className='hover:scale-110 transform transition-transform duration-200'>Unete</li>
-  {/* <li>Trabaja con nosotros</li> */}
-</article>
-
-
-        <nav className="flex items-center gap-4">
-          <article className="hidden sm:block">
-            <Link to={'/register'}>
-              <button className="inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                  Registrate
-                </span>
-              </button>
-            </Link>
-            <Link to={''}>
-              <button className="inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                  Iniciar Sesión
-                </span>
-              </button>
-            </Link>
-          </article>
-          <article className="block sm:hidden">
-            <MenuHamburguer />
-          </article>
+        <nav className="hidden md:flex items-center justify-center flex-1">
+          <ul className=' flex list-none font-bold space-x-6'>
+            <li className='hover:scale-110 transform transition-transform duration-200'>
+              <Link to="/contact">Como funciona</Link>
+            </li>
+            <li className='hover:scale-110 transform transition-transform duration-200'>
+              <Link to="/about">Aprendizaje</Link>
+            </li>
+            <li className='hover:scale-110 transform transition-transform duration-200'>
+              <Link to="/courses">Trabaja con nosotros</Link>
+            </li>
+            <li className='hover:scale-110 transform transition-transform duration-200'>
+              <Link to="/contact">Contactanos</Link>
+            </li>
+          </ul>
         </nav>
+
+        <div className="hidden md:flex items-center gap-4">
+  <Link to={'/register'}>
+  <button className="inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-black hover:bg-white">
+      <span className="relative px-5 py-2.5 transition-all ease-in duration-75 text-white bg-transparent rounded-md group-hover:bg-white group-hover:text-gray-900">
+        Registrate
+      </span>
+    </button>
+  </Link>
+  <Link to={'/login'}>
+    <button className="inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-black hover:bg-white">
+      <span className="relative px-5 py-2.5 transition-all ease-in duration-75 text-white bg-transparent rounded-md group-hover:bg-white group-hover:text-gray-900">
+        Iniciar Sesión
+      </span>
+    </button>
+  </Link>
+</div>
+
+
+        <div className="md:hidden">
+          <button onClick={toggleMenu}>
+            <MenuHamburguer />
+          </button>
+        </div>
       </header>
+
+      {isMenuOpen && (
+        <nav className="md:hidden bg-white text-purple-800">
+          <ul className='flex flex-col items-center list-none font-bold space-y-4 py-4'>
+            <li>
+              <Link to="/contact" onClick={toggleMenu}>Contacto</Link>
+            </li>
+            <li>
+              <Link to="/about" onClick={toggleMenu}>Nosotros</Link>
+            </li>
+            <li>
+              <Link to="/courses" onClick={toggleMenu}>Cursos</Link>
+            </li>
+            <li>
+              <Link to="/join" onClick={toggleMenu}>Únete</Link>
+            </li>
+            <li>
+              <Link to={'/register'} onClick={toggleMenu}>
+                <button className="inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-black group-hover:from-purple-800 hover:text-white">
+                  <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
+                    Regístrate
+                  </span>
+                </button>
+              </Link>
+            </li>
+            <li>
+              <Link to={'/login'} onClick={toggleMenu}>
+                <button className="inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-black group-hover:from-purple-800 hover:text-white">
+                  <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
+                    Iniciar Sesión
+                  </span>
+                </button>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      )}
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
