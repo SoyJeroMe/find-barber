@@ -11,46 +11,48 @@ function Navbar() {
   };
 
   return (
-    <div>
-      <header className="py-1 px-6 flex items-center justify-between bg-white">
+    <div className='sticky top-0 z-50 w-full'>
+      <header className="py-1 px-6 flex items-center justify-between bg-white shadow-md">
         <Link to={'/'} className='flex items-center'>
           <img className='h-28' src={logoSL} alt="Logo" />
         </Link>
 
         <nav className="hidden md:flex items-center justify-center flex-1">
-          <ul className=' flex list-none font-bold space-x-6'>
+          <ul className='flex list-none font-bold space-x-6'>
             <li className='hover:scale-110 transform transition-transform duration-200'>
-              <Link to="/contact">Como funciona</Link>
+              <Link to="/how-this-work">¿Cómo funciona?</Link>
             </li>
             <li className='hover:scale-110 transform transition-transform duration-200'>
-              <Link to="/about">Aprendizaje</Link>
+              <Link to="/contact">Aprendizaje</Link>
             </li>
             <li className='hover:scale-110 transform transition-transform duration-200'>
-              <Link to="/courses">Trabaja con nosotros</Link>
+              <Link to="/contact">Contacto</Link>
             </li>
             <li className='hover:scale-110 transform transition-transform duration-200'>
-              <Link to="/contact">Contactanos</Link>
+              <Link to="/courses">Únete</Link>
+            </li>
+            <li className='hover:scale-110 transform transition-transform duration-200'>
+              <Link to="/contact">Información</Link>
             </li>
           </ul>
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-  <Link to={'/register'}>
-  <button className="inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-black hover:bg-white">
-      <span className="relative px-5 py-2.5 transition-all ease-in duration-75 text-white bg-transparent rounded-md group-hover:bg-white group-hover:text-gray-900">
-        Registrate
-      </span>
-    </button>
-  </Link>
-  <Link to={'/login'}>
-    <button className="inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-black hover:bg-white">
-      <span className="relative px-5 py-2.5 transition-all ease-in duration-75 text-white bg-transparent rounded-md group-hover:bg-white group-hover:text-gray-900">
-        Iniciar Sesión
-      </span>
-    </button>
-  </Link>
-</div>
-
+          <Link to={'/register'}>
+            <button className="inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-black hover:bg-white">
+              <span className="relative px-5 py-2.5 transition-all ease-in duration-75 text-white bg-transparent rounded-md group-hover:bg-white group-hover:text-gray-900">
+                Registrate
+              </span>
+            </button>
+          </Link>
+          <Link to={'/login'}>
+            <button className="inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-black hover:bg-white">
+              <span className="relative px-5 py-2.5 transition-all ease-in duration-75 text-white bg-transparent rounded-md group-hover:bg-white group-hover:text-gray-900">
+                Iniciar Sesión
+              </span>
+            </button>
+          </Link>
+        </div>
 
         <div className="md:hidden">
           <button onClick={toggleMenu}>
