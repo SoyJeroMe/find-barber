@@ -6,7 +6,7 @@ import RegisterStylist from '../src/pages/register/RegisterStylist.jsx'
 import RegisterCurrentUser from '../src/pages/register/RegisterCurrentUser.jsx'
 import BarberPage from '../src/pages/barberPage/BarberPage.jsx'
 import AppDescription from '../src/pages/appDescription/AppDescription.jsx'
-import Contact from '../src/pages/contact/Contact.jsx'
+// import Contact from '../src/pages/contact/Contact.jsx'
 import './index.css'
 
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
