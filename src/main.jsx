@@ -38,10 +38,10 @@ const router = createBrowserRouter([
     path: '/app-description',
     element: <AppDescription />,
   },
-  {
-    path: '/contact',
-    element: <Contact />,
-  },
+  // {
+  //   path: '/contact',
+  //   element: <Contact />,
+  // },
   {
     path: 'learning',
     element: <Learning />
