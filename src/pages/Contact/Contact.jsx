@@ -5,7 +5,7 @@ import {FaSquareXTwitter} from 'react-icons/fa6'
 import {AiFillTikTok} from 'react-icons/ai'
 import Navbar from '../../components/principals/Navbar';
 
-const ContactPage = () => {
+const Contact = () => {
   return (
     <>
     <Navbar />
@@ -94,4 +94,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default Contact;

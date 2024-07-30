@@ -20,19 +20,19 @@ function Navbar() {
         <nav className="hidden md:flex items-center justify-center flex-1">
           <ul className='flex list-none font-bold space-x-6'>
             <li className='hover:scale-110 transform transition-transform duration-200'>
-              <Link to="/how-this-work">¿Cómo funciona?</Link>
+              <Link to="/app-description">¿Cómo funciona?</Link>
             </li>
             <li className='hover:scale-110 transform transition-transform duration-200'>
-              <Link to="/contact">Aprendizaje</Link>
+              <Link to="/learning">Aprendizaje</Link>
             </li>
             <li className='hover:scale-110 transform transition-transform duration-200'>
               <Link to="/contact">Contacto</Link>
             </li>
             <li className='hover:scale-110 transform transition-transform duration-200'>
-              <Link to="/courses">Únete</Link>
+              <Link to="/join-us">Únete</Link>
             </li>
             <li className='hover:scale-110 transform transition-transform duration-200'>
-              <Link to="/contact">Información</Link>
+              <Link to="/info">Información</Link>
             </li>
           </ul>
         </nav>

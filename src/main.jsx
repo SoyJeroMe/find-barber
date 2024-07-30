@@ -5,11 +5,13 @@ import Register from '../src/pages/register/Register.jsx'
 import RegisterStylist from '../src/pages/register/RegisterStylist.jsx'
 import RegisterCurrentUser from '../src/pages/register/RegisterCurrentUser.jsx'
 import BarberPage from '../src/pages/barberPage/BarberPage.jsx'
-import HowWork from '../src/pages/HowWork/HowWork.jsx'
-import Contact from '../src/pages/Contact/Contact.jsx'
+import AppDescription from './pages/appDescription/AppDescription.jsx'
+import Contact from './pages/contact/Contact.jsx'
 import './index.css'
 
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
+import Learning from './pages/learning/Learning.jsx'
+import JoinUs from './pages/join-us/JoinUs.jsx'
 
 const router = createBrowserRouter([
   {
@@ -33,13 +35,21 @@ const router = createBrowserRouter([
     element: <BarberPage />,
   },
   {
-    path: '/how-this-work',
-    element: <HowWork />
+    path: '/app-description',
+    element: <AppDescription />,
   },
   {
     path: '/contact',
-    element: <Contact />
+    element: <Contact />,
   },
+  {
+    path: 'learning',
+    element: <Learning />
+  },
+  {
+    path: 'join-us',
+    element: <JoinUs />
+  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
